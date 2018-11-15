@@ -255,6 +255,14 @@ angular.module('ui-notification').provider('Notification', function() {
             });
         };
 
+        /*
+            This function allows setting maxCount option from app controller based on the user preference. 
+            Without it maxCount option was only available to set from NotificationProvider.setOptions in main.js
+        */
+       notify.setMaxCount = function(maxCount) {
+        options.maxCount = maxCount;
+    };
+
         return notify;
     }];
 });
